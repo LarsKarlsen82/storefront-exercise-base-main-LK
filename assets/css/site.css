@@ -1,0 +1,84 @@
+
+header{
+    width: 100%;
+    color: white;
+    background-color: rgb(58, 58, 58);
+    height: 6rem;
+    padding: 0.7rem;
+}
+
+header h1{
+    text-transform: uppercase;
+}
+footer{
+    width: 100%;
+    color: white;
+    background-color: rgb(58, 58, 58);
+    height: 4rem;
+    padding: 0.7rem; 
+}
+
+/*products*/
+
+#productDisplay section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.productCard{
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 1em;
+  width: 20em;
+margin: 1em;
+  
+}
+
+.productCard img{
+  
+    width: 90%;
+}
+
+
+#categoriesNav {
+    background-color: #333; /* Background color of the navigation bar */
+    display: flex; /* Use flexbox layout */
+    list-style: none; /* Remove list item bullets */
+}
+
+#categoriesNav li {
+    margin: 0; /* Remove default margins for list items */
+}
+
+#categoriesNav a {
+    color: white; /* Text color of the links */
+    text-align: center; /* Center-align the text */
+    padding: 14px 16px; /* Padding around the links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+#categoriesNav a:hover {
+    background-color: #ddd; /* Background color of links on hover */
+    color: black; /* Text color of links on hover */
+}
+
+
+.product-container {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Margin between product containers */
+}
+
+.product-info {
+    margin-left: 20px; /* Margin between image and product info */
+    padding: 10px; /* Add padding inside the product information box */
+    border: 1px solid #000; /* Add a border around the product information box */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+}
+
+
+.product-info h2 {
+    margin-top: 0; /* Remove default margin for h2 */
+}
