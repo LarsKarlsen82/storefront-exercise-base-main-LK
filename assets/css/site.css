@@ -82,3 +82,32 @@ margin: 1em;
 .product-info h2 {
     margin-top: 0; /* Remove default margin for h2 */
 }
+
+#shoppingCart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+#cartBadge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+#cartItems {
+    margin-top: 10px;
+}
+
+#cartItems {
+    background-color: lightblue; /* Set the background color to light blue */
+    padding: 20px; /* Add some padding to the cart */
+    border-radius: 5px; /* Optional: Add rounded corners to the cart */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow for depth */
+}
+.hidden {display: none;}
