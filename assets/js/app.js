@@ -29,6 +29,7 @@ function initApp(){
     
 }
 
+// Visning af kategorier
 function categoriesCallBack(categories) {
     // Handle categories data here
     console.log("Categories callback:", categories);
@@ -62,6 +63,8 @@ function categoriesCallBack(categories) {
     }
 }
 
+// Håndtering af produkter
+
 function fetchProductsByCategory(category) {
     // Assuming you have an API endpoint to fetch products by category
     // Replace '/api/products?category=' with your actual API endpoint
@@ -80,7 +83,7 @@ function fetchProductsByCategory(category) {
 // Define a basket array to store products
 const basket = [];
 
-
+cartButton
 function displayProducts(response) {
     const products = response.products;
     const displayedImages = {}; // Use an object to track displayed images for each category
@@ -158,6 +161,7 @@ function displayProducts(response) {
                 
                     console.log(`Added ${product.title} to cart`);
                 });
+                
 
                 // Get cart elements from the DOM
                 const cartBadge = document.getElementById('cartBadge');
@@ -186,8 +190,30 @@ function displayProducts(response) {
                             cartItem.textContent = `${item.product.title} - Antal: ${item.quantity}`;
                             cartItemsElement.appendChild(cartItem);
                         });
-                    }
+                            // Update the total price when the cart is opened
+                            updateTotalPriceInCart();}
                 });
+                        function calculateTotalPrice() {
+                            return basket.reduce((total, item) => total + item.product.price * item.quantity, 0);
+                        }
+                        function updateTotalPriceInCart() {
+                            const totalPrice = calculateTotalPrice();
+                            const totalItem = document.createElement('div');
+                            totalItem.textContent = `Total Price: DKK ${totalPrice.toFixed(2)}`;
+                            totalItem.style.fontWeight = 'bold';
+                        
+                            // Først fjern den tidligere viste totalpris, hvis der er nogen
+                            const existingTotalItem = document.getElementById('totalPrice');
+                            if (existingTotalItem) {
+                                existingTotalItem.remove();
+                            }
+                        
+                            // Tilføj den nye totalpris til kurven
+                            totalItem.id = 'totalPrice'; // Tilføj en unik id for at lette fjernelsen senere, hvis nødvendigt
+                            cartItemsElement.appendChild(totalItem);
+                        }
+
+
                 // Close cart by clicking outside or clearing cart
                 function addToCart(product, quantityToAdd) {
                     // Find the product in the basket

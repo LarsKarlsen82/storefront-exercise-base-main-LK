@@ -109,5 +109,6 @@ margin: 1em;
     padding: 20px; /* Add some padding to the cart */
     border-radius: 5px; /* Optional: Add rounded corners to the cart */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow for depth */
+    z-index: 9999; /* Set a high z-index value to ensure the cart is in front */
 }
 .hidden {display: none;}
